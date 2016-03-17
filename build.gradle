@@ -1,0 +1,21 @@
+apply plugin: 'groovy'
+apply plugin: 'java'
+apply plugin: "maven"
+
+repositories {
+    flatDir dirs: "$project.rootDir/libs"
+    maven {
+        url 'https://dl.bintray.com/jllk/maven/'
+    }
+    mavenCentral()
+}
+
+dependencies {
+    compile gradleApi()
+    compile localGroovy()
+    compile 'com.github.jllk:jllk-cda:1.0.0'
+    compile 'org.codehaus.groovy:groovy-all:2.3.11'
+}
+
+group 'com.github.jllk'
+version '1.0.0'
